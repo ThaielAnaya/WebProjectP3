@@ -1,0 +1,10 @@
+from django.shortcuts import render, get_object_or_404
+from .models import Page
+
+def page_detail(request, slug):
+    page = get_object_or_404(Page, slug=slug)
+    return render(request, 'content_pages/page_detail.html', {'page': page})
+
+def home(request, slug):
+    page = get_object_or_404(Page, slug=slug)
+    return render(request, 'content_pages/home.html', {'page': page})

@@ -1,0 +1,62 @@
+<!-- page_detail.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ page.title }}{% endblock title %}</title>
+    <meta name="description" content="{{ page.title }} page">
+    <meta name="keywords" content="{{ page.title|lower }}">
+    <link rel="icon" href="{% static 'tenrikyoemblem.png' %}">
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            background-image: url("{% static 'kyokaibg.jpeg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: sans-serif;
+            display: flex,
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0px;
+            display: flex;
+            flex-direction: column; /* horizontal centering */
+            align-items: center;     /* vertical centering */
+        }
+        nav li {
+            margin: 0 1em;
+        }
+        nav {
+            padding-top: 2em;
+            background-color: transparent;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+    </style>
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+<body>
+    {% block navbar %}
+        {% include "partials/navbar.html" %}
+    {% endblock navbar %}
+    {% block content %}
+    <main>
+        <h1>{{ page.title }}</h1>
+        <div>{{ page.content|linebreaks }}</div>
+    </main>
+    {% endblock content %}
+</body>
+</html>

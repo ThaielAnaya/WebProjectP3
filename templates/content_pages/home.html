@@ -1,0 +1,99 @@
+<!-- home.html -->
+{% extends "page_detail.html" %}
+{% load static %}
+
+{% block navbar %}{% endblock navbar %}
+
+{% block extra_css %}
+<style>
+    .container {
+        display: flex;
+        max-width: 800px;
+        margin: 0px auto;
+        background: rgba(0, 0, 0, 0.86);
+        height: 100vh;
+    }
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+        border-right: 1px solid #ccc;
+    }
+    .sidebar-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar .icon {
+        display: block;
+        width: 80px;
+        margin: 0 auto 15px;
+    }
+    .sidebar nav a {
+        display: block;
+        margin: 10px 0;
+        text-decoration: none;
+    }
+    .content {
+        display: flex;
+        color: white;
+        flex-direction: column;
+        flex:1;
+    }
+    .info {
+        flex:1;
+        padding: 15px;
+    }
+    .news {
+        flex: 1;
+        padding: 15px;
+    }
+    .news h2 { margin-top: 0; }
+    .news p { margin-bottom: 10px; }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <h1>
+                
+            </h1>
+            <img
+                src="{% static 'tenrikyoemblem.png' %}"
+                alt="Icon"
+                class="icon"
+                width="80"
+                height="80"
+            />
+            <nav>
+                <a href="#">Tsutome</a>
+                <a href="#">Autoridades</a>
+                <a href="#">Fukyoshos</a>
+                <a href="#">Asociaciones</a>
+                <a href="#">Eventos</a>
+                <a href="#">Centro cultural</a>
+                <a href="#">Servicios(porahora)</a>
+                <a href="#">Galeria</a>
+                <a href="#">¿Cómo llego?</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="content">
+        <section class="info">
+            <h2>Sobre nosotros</h2>
+            <text>cambiar</text>
+        </section>
+
+        <section class="news">
+            <h2>Noticias</h2>
+            <p>Placeholder news item 1</p>
+            <p>Placeholder news item 2</p>
+            <p>Placeholder news item 3</p>
+            <p>Placeholder news item 4</p>
+        </section>
+    </div>
+</div>
+{% endblock content %}

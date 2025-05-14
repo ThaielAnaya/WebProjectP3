@@ -1,0 +1,9 @@
+{% extends "page_detail.html" %}
+{% block content %}
+  <h1>Noticias</h1>
+  <ul>
+    {% for a in articles %}
+      <li><a href="{{ a.get_absolute_url }}">{{ a.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
