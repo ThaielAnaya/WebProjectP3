@@ -1,9 +1,18 @@
 {% extends "page_detail.html" %}
 {% block content %}
-  <h1>Noticias</h1>
-  <ul>
+<div class="container py-4">
+  <h1 class="mb-4">Noticias</h1>
+  <div class="list-group">
     {% for a in articles %}
-      <li><a href="{{ a.get_absolute_url }}">{{ a.title }}</a></li>
+      <a 
+        href="{{ a.get_absolute_url }}" 
+        class="list-group-item list-group-item-action"
+      >
+        {{ a.title }}
+      </a>
+    {% empty %}
+      <div class="list-group-item">No hay noticias disponibles.</div>
     {% endfor %}
-  </ul>
+  </div>
+</div>
 {% endblock content %}
