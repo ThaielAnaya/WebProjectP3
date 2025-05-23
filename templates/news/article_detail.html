@@ -1,6 +1,16 @@
-{% extends "page_detail.html.html" %}
+{% extends "page_detail.html" %}
+{% block title %}{{ object.title }} - Noticias{% endblock %}
+
 {% block content %}
-  <h1>{{ object.title }}</h1>
-  <p>{{ object.published }}</p>
-  {{ object.content|safe }}
+<article class="container py-4">
+  <header class="mb-4">
+    <h1 class="display-4">{{ object.title }}</h1>
+    <time class="text-muted" datetime="{{ object.published|date:'c' }}">
+      {{ object.published|date:"d F Y" }}
+    </time>
+  </header>
+  <div class="article-content">
+    {{ object.content|safe }}
+  </div>
+</article>
 {% endblock content %}

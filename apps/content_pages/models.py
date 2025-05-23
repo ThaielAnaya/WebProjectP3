@@ -9,6 +9,7 @@ class Page(models.Model):
 
     class Meta:
         app_label = 'content_pages'
+        ordering = ['-updated_at']
 
     def __str__(self):
         return self.title

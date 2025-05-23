@@ -1,8 +1,9 @@
 from django.urls import path
-from django.views.generic import TemplateView
+from .views import HomeView, page_detail
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='content_pages/home.html'), name='home'),
-    path('page/<slug:slug>/', TemplateView.as_view(template_name='content_pages/page_detail.html'), name='page_detail'),
+    path('', HomeView.as_view(), name='home'),
+    path('home/', HomeView.as_view(), name='home_alt'),  # Alternative URL for home
+    path('page/<slug:slug>/', page_detail, name='page_detail'),
 ]
 
